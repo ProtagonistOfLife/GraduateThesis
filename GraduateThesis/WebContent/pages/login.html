@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>问卷调查登录页面</title>
+<link rel="stylesheet" href="../css/framedesign.css" type="text/css">
+<link rel="stylesheet" href="../css/fontdesign.css" type="text/css">
+</head>
+<body background="/img/">
+<div class="topdiv">
+	<span class="toptitle">
+	<a href="">
+		<img class="signimg" alt="标志" src="../img/sign.png">
+	</a>
+	<span class="englishspan">Login Page</span>
+	<br>
+	<span>用户登录</span>
+	</span>
+</div>
+<div class="formdiv">
+<form action="" method="post" onsubmit="formcheck()">
+	<span>账号：</span>
+	<input class="textfiled" name="id" type="text" size='15' placeholder="账号/用户名/手机号">
+	<br>
+	<span>密码：</span>
+	<input class="textfiled" name="password" type="password" size='15' placeholder="请输入密码">
+	<br>
+		<img alt="验证码" src="/GraduateThesis/getverifiedimg" onclick="alert(警告)">
+	<font face="行楷" class="fontlink">换一张</font>
+	<input class="verify" name="verify" type="text" size='6' placeholder="验证码">
+	<br>
+	<input class="submit" type="submit" value="提交">
+	</form>
+</div>
+<div class="footdiv">
+	2018&reg;pcw&copy;
+</div>
+</body>
+</html>

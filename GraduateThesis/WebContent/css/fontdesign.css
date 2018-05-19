@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+.toptitle{
+	margin-top: 10px; 
+	font-size: 30px;
+	color: blue;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.footdiv{
+	width: 100%;
+	margin-top: 270px;
+	margin-bottom: 50px;
+	color: silver;
+	font-size: 12px;
+	text-align: center;
+}
+
+.englishspan{
+	font-size: 16px;
+}
+
+.signimg{
+	width: 120px;
+	height: 84px;
+	float: left;
+	margin-left: 50px;
+}
+
+.fontlink{
+	color: blue;
+}
+
+.fontlink:HOVER{
+	color:green;
+	text-decoration: underline;
+}
+
+a:ACTIVE {
+	font-size: 13px;
+}
+
+a:LINK {
+	color: blue;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+a:HOVER {
+	color: green;
+	text-decoration: underline;
+	font-size: 17px;
+}

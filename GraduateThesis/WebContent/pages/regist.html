@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href="../">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>用户注册</title>
+	<link rel="stylesheet" href="css/framedesign.css" type="text/css" />
+	<link rel="stylesheet" href="css/fontdesign.css" type="text/css">
+	<script type="text/javascript" src="js/verify.js" charset="gbk"></script>
+	<script type="text/javascript" src="js/ajaxoption.js" charset="gbk"></script>
+</head>
+	<body>
+	<div>
+		<div class="topdiv">
+			<span class="toptitle" >
+			<a href="">
+				<img class="signimg" alt="标志" src="../img/sign.png">
+			</a>
+			<span class="englishspan">User Registration Information Form</span>
+			<br>
+			<span>用户注册信息表</span>
+			</span>
+		</div>
+		
+		<div class="maxwidth">
+		<div class="formdiv">
+			<form action="#" method="post" name="form1">
+				<span class="filedname">用户名：</span><input class="textfiled" maxlength="9" type="text" name="nickname" size="10" placeholder="输入唯一用户名" onblur="checkname(this)">
+				<span id="namewarn"></span>
+				<br>
+				<span class="filedname">性别：</span>
+				<input type="radio" name="sex" value="男" id="m" checked><label for="m">男</label>
+				<input type="radio" name="sex" value="女" id="f"><label for="f">女</label>
+				<br>
+				<span class="filedname">出生日期：</span>
+				<select id="selectyear" name="year" onchange="changed('selectyear')">
+				</select>年<!-- 准备通过js来实现 -->
+				<select id="selectmonth" onchange="changed('selectmonth')"></select>月
+				<select id="selectday"></select>日
+				<br>
+				<span class="filedname">密码：</span><input id="pwd" class="textfiled" maxlength="16" type="password" name="password" size="16" placeholder="请输入8~16位密码" onblur="pwcheck('pwd')">
+				<span id="pwdwarn"></span>
+				<br>
+				<span class="filedname">确认密码：</span><input id="vpwd" class="textfiled" maxlength="16" type="password" size="16" placeholder="请重新输入次密码" onblur="pwcheck('vpwd')">
+				<span id="vpwdwarn"></span>
+				<br>
+				<span class="confirmspan" id="phonenum">
+					<span class="filedname">电话号码：</span><input class="textfiled" type="text" name="phonenum" size="15" placeholder="请输入电话号码">
+					<button onclick ="verified('phonenum')" type="button" disabled>认证</button>
+					<span id="phonewarn"></span>
+				</span>
+				<br>
+				<span class="confirmspan" id="email">
+					<span class="filedname">email:</span><input class="textfiled" type="text" name="email" size="20" placeholder="请输入电话号码"  onfocus="getverifycode(this)">
+					<button onclick="verified('email')" type="button" disabled>认证</button>
+					<span id="emailwarn"></span>
+				</span>
+				<br>
+				<input class="submit" type="submit" value="提交">
+			</form>
+		</div>
+	</div>
+	<div class="footdiv">
+		2018&reg;pcw&copy;
+	</div>
+	</div>
+	</body>
+</html>
+<!--在本页面中出现了一些问题需要解决：
+		1.如何发送短信验证码给手机
+		2.如何发送邮箱验证码给邮箱
+	 -->

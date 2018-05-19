@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcw.dao.QuestionDao">
+    <insert id="addQuestion" parameterType="com.pcw.bean.Question">
+        insert into ques_question values(#{questionid},#{question},#{choose},#{result,jdbcType=CLOB},#{info,jdbcType=CLOB},#{create_date})
+    </insert>
+    <!--不打算启用 
+    <delete id="update" parameterType=""></delete>
+     -->
+     <update id="update" parameterType="com.pcw.bean.Question">
+         update ques_question set result=#{result,jdbcType=CLOB} where questionid=#{questionid}
+     </update>
+    <select id="findById" parameterType="long">
+        select * from ques_question where questionid=#{id}
+    </select>
+    <select id="findAll" parameterType="com.pcw.bean.Question">
+        select * from ques_question
+    </select>
+    <select id="findByPattern" parameterType="string" resultType="com.pcw.bean.Question">
+        select * from ques_question where question like '%${_parameter}%'
+    </select>
+    <select id="findByQuery" parameterType="long" resultType="com.pcw.bean.Question">
+        select qq.* from ques_question qq,ques_question_paper qqp where qq.questionid=qqp.questionid and qqp.paperid=#{queryid}
+    </select>
+</mapper>

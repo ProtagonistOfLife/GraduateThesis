@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcw.dao.BTableDao">
+    <insert id="addBTable" parameterType="com.pcw.bean.BTable">
+        insert into ques_question_paper values(#{paperid},#{questionid},#{filltime,jdbcType=DATE},#{pastresult,jdbcType=CLOB})
+    </insert>
+    <delete id="deleteBTable">
+        delete from ques_question_paper where paperid=#{paperid}
+    </delete>
+</mapper>

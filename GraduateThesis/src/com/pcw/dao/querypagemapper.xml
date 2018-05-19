@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcw.dao.QueryPageDao">
+    <insert id="addQueryPage" parameterType="com.pcw.bean.Question">
+        insert into ques_paper values(#{paperid},#{papername,jdbcType=VARCHAR},#{removetime,jdbcType=DATE},#{userid},#{resultmessage,jdbcType=CLOB},#{enddate})
+    </insert>
+    <delete id="deleteByID" parameterType="long">
+        delete from ques_paper where paperid=#{id}
+    </delete>
+    <update id="update" parameterType="com.pcw.bean.QueryPaper">
+        update ques_paper 
+        <set>
+            <if test="papername!=null">
+                papername=#{papername}
+            </if>
+            <if test="removetime!=null">
+                removetime=#{removetime}
+            </if>
+            <if test="userid!=null">
+                userid=#{userid}
+            </if>
+            <if test="resultmessage!=null">
+                resultmessage=#{resultmessage}
+            </if>
+            <if test="enddate != null">
+				enddate=#{enddate}                
+            </if>
+        </set>
+        where paperid=#{id}
+    </update>
+    <select id="findById" parameterType="long" resultType="com.pcw.bean.QueryPaper">
+        select * from ques_paper where paperid=#{id}
+    </select>
+    <select id="findByUser" parameterType="long" resultType="com.pcw.bean.QueryPaper">
+        select * from ques_paper where userid=#{userid}
+    </select>
+    <select id="findAll" resultType="com.pcw.bean.QueryPaper">
+        select * from ques_paper
+    </select>
+    <select id="superSelect" parameterType="String" resultType="java.util.LinkedHashMap"> 
+		${value} 
+	</select>
+</mapper>
